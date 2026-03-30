@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENCISO Website | Digital Portfolio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        /* 1. Background Setup */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: #1a1a1a; /* Fallback color */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transition: background-image 1.5s ease-in-out; /* Smooth fade */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* 2. Dark Overlay for Readability */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Dims the wallpaper */
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 3. Button Styling */
+        .link-btn {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            padding: 12px;
+        }
+
+        .link-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #000;
+            transform: translateY(-2px);
+            border-color: white;
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border: 3px solid white;
+        }
+        
+        .social-icon {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            transition: color 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="overlay">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-5 text-center text-white">
+                
+                <img src="" 
+                     class="rounded-circle profile-img mb-3 shadow-lg" alt="Profile">
+                
+                <h1 class="h3 fw-bold mb-1">Enciso, Kaymer B.</h1>
+                <p class="lead opacity-75 mb-4">Graphic Artist & 3D Artist</p>
+
+                <div class="d-grid gap-3">
+                    <a href="#" class="btn rounded-pill link-btn">
+                        <i class="bi bi-globe me-2"></i> Website
+                    </a>
+                    <a href="#" class="btn rounded-pill link-btn">
+                        <i class="bi bi-globe me-2"></i> Commision 
+                    </a>
+                    <a href="#" class="btn rounded-pill link-btn">
+                        <i class="bi bi-globe me-2"></i> Portfolio
+                    </a>
+                    
+                </div>
+                
+
+                <div class="mt-5 d-flex justify-content-center gap-4">
+                    <a href="https://facebook.com" class="social-icon"><i class="bi bi-facebook"></i></a>
+                    <a href="https://instagram.com" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    <a href="https://threads.com" class="social-icon"><i class="bi bi-threads"></i></a>
+                    <a href="https://twitter.com" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://youtuber.com" class="social-icon"><i class="bi bi-youtube"></i></a>
+                    <a href="https://linkedin.com" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const images = [
+        'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1920&q=80'
+    ];
+
+    let currentIndex = 0;
+
+    function changeBackground() {
+        // Set background image
+        document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+        
+        // Cycle index
+        currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    // Run once on load
+    changeBackground();
+
+    // Change every 5 seconds
+    setInterval(changeBackground, 5000);
+</script>
+
+</body>
+</html>
